@@ -2,7 +2,7 @@
   "remoteURL": "git@github.com:OnePathToFreedom/obsidian.git",
   "gitLocation": "",
   "syncinterval": 0,
-  "isSyncOnLoad": false,
+  "isSyncOnLoad": true,
   "checkStatusOnLoad": true,
   "noticeLevel": "ALL",
   "showSyncSuccessNotice": true

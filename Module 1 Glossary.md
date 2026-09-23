@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, glossary, bilingual]
+tags: [networking, coursera, glossary, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-21
 ---
@@ -248,3 +248,75 @@ EN: A technique that lets you have multiple logical LANs operating on the same p
 **VLAN header**
 RU: Данные, указывающие тип фрейма. В пакете идут перед полем EtherType.
 EN: A piece of data indicating what the frame is. In a data packet, followed by the EtherType field.
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Bit (Бит)::RU: Наименьшая единица данных, понятная компьютеру. EN: The smallest representation of data that a computer can understand.
+Border Gateway Protocol (BGP)::RU: Протокол, по которому роутеры обмениваются данными друг с другом. EN: A protocol by which routers share data with each other.
+Broadcast (Широковещательная передача)::RU: Тип Ethernet-передачи, отправляемый абсолютно всем устройствам в LAN. EN: A type of Ethernet transmission sent to every single device on a LAN.
+<!--SR:!2026-09-26,3,250-->
+Broadcast address (Broadcast-адрес)::RU: Специальный адрес назначения для Ethernet broadcast — состоит из всех F. EN: A special destination used by an Ethernet broadcast, composed of all F's.
+<!--SR:!2026-09-26,3,250-->
+Cable categories (Категории кабелей)::RU: Группы кабелей из одного материала — медь и оптика. EN: Groups of cables made with the same material — copper and fiber.
+Cables (Кабели)::RU: Изолированные провода, соединяющие устройства и передающие данные. EN: Insulated wires that connect devices and allow data to be transmitted.
+CSMA/CD::RU: Используется, чтобы определить, когда канал связи свободен и устройство может передавать данные. EN: Used to determine when the channel is clear and a device is free to transmit.
+Client (Клиент)::RU: Устройство, получающее данные от сервера. EN: A device that receives data from a server.
+Collision domain (Домен коллизий)::RU: Сегмент сети, где в момент времени может общаться только одно устройство. EN: A network segment where only one device can communicate at a time.
+Computer networking (Компьютерные сети)::RU: Вся область знаний о том, как компьютеры общаются друг с другом. EN: The full scope of how computers communicate with each other.
+Copper cable categories (Категории медных кабелей)::RU: Cat 5, 5e, 6 и т.д. — разное число витков пар, влияющее на скорость и устойчивость к помехам. EN: Cat 5, 5e, 6, etc. — different numbers of twists per pair, affecting speed and interference resistance.
+Crosstalk (Перекрёстная наводка)::RU: Ситуация, когда импульс в одном проводе случайно детектируется в соседнем. EN: When an electrical pulse on one wire is accidentally detected on another wire.
+Cyclical Redundancy Check (CRC)::RU: Математическое преобразование через полиномиальное деление, сжимающее данные в одно число. EN: A mathematical transformation using polynomial division to represent data as one number.
+Data packet (Пакет данных)::RU: Общий термин для любого набора бинарных данных, передаваемых по сети. EN: An all-encompassing term for any set of binary data sent across a network link.
+Data link layer (Канальный уровень)::RU: Уровень, где впервые появляются протоколы; отвечает за интерпретацию сигналов. EN: The layer where the first protocols appear; responsible for a common way of interpreting signals.
+Destination MAC address (MAC-адрес получателя)::RU: Аппаратный адрес получателя, идёт сразу после SFD. EN: The hardware address of the intended recipient, right after the start frame delimiter.
+Duplex communication (Дуплексная связь)::RU: Форма связи, где данные могут идти в обе стороны по кабелю. EN: A form of communication where information can flow in both directions.
+Ethernet::RU: Наиболее широко используемый протокол для передачи данных по отдельным линиям связи. EN: The protocol most widely used to send data across individual links.
+Ethernet frame (Ethernet-фрейм)::RU: Строго структурированный набор информации в определённом порядке. EN: A highly structured collection of information in a specific order.
+EtherType field (Поле EtherType)::RU: Идёт после Source MAC Address, 16 бит, описывает протокол содержимого фрейма. EN: Follows the Source MAC Address, 16 bits, describes the protocol of the frame's contents.
+Fiber cable (Оптоволоконный кабель)::RU: Тонкие стеклянные трубки, передающие световые импульсы вместо напряжения. EN: Tiny glass tubes using light pulses instead of electrical voltage.
+Five layer model (Пятиуровневая модель)::RU: Физический, канальный, сетевой, транспортный, прикладной уровни. EN: Physical, Data Link, Network, Transport, and Application layers.
+Frame check sequence (FCS)::RU: 4-байтное (32-битное) число — контрольная сумма всего фрейма. EN: A 4-byte/32-bit checksum value for the entire frame.
+Full duplex::RU: Возможность устройств на обоих концах линии общаться одновременно. EN: The capacity of devices on either end of a link to communicate at the same time.
+Half-duplex::RU: Связь возможна в обе стороны, но только одно устройство передаёт в конкретный момент. EN: Communication possible in each direction, but only one device transmits at a time.
+Hexadecimal (Шестнадцатеричная система)::RU: Способ представления чисел с основанием 16. EN: A way to represent numbers using base 16.
+Hub (Хаб)::RU: Устройство физического уровня, рассылающее данные всем подключённым компьютерам. EN: A physical layer device that broadcasts data to every connected computer.
+Internet Protocol (IP)::RU: Самый распространённый протокол сетевого уровня. EN: The most common protocol used at the network layer.
+Internet Service Provider (ISP)::RU: Компания, предоставляющая подключение к интернету. EN: A company that provides an internet connection.
+Internetwork (Интернетворк)::RU: Совокупность сетей, соединённых через роутеры — самая известная из них Интернет. EN: A collection of networks connected via routers — the most famous being the Internet.
+<!--SR:!2026-09-24,1,230-->
+Line coding (Линейное кодирование)::RU: Модуляция, используемая в компьютерных сетях. EN: Modulation used for computer networks.
+Local Area Network (LAN)::RU: Единая сеть, в которой соединены несколько устройств. EN: A single network in which multiple devices are connected.
+MAC address (MAC-адрес)::RU: Глобально уникальный идентификатор сетевого интерфейса, 48 бит, 6 групп по 2 hex-цифры. EN: A globally unique identifier for a network interface, a 48-bit number, 6 groups of 2 hex digits.
+<!--SR:!2026-09-24,1,230-->
+Modulation (Модуляция)::RU: Изменение напряжения постоянного электрического заряда в медном кабеле. EN: Varying the voltage of a constant electrical charge on a copper cable.
+Multicast frame (Multicast-фрейм)::RU: Младший бит первого октета адреса назначения = 1; рассылается сегменту, принимается по критерию, отличному от собственного MAC. EN: LSB of the first octet of the destination address = 1; sent to the segment, accepted by criteria other than the device's own MAC.
+Network layer (Сетевой уровень)::RU: Позволяет разным сетям общаться через роутеры. EN: Lets different networks communicate through routers.
+<!--SR:!2026-09-26,3,250-->
+Network port (Сетевой порт)::RU: Физический разъём для подключения устройства к сети. EN: The physical connector used to connect a device to the network.
+Network switch (Сетевой свич)::RU: Устройство Layer 2, заглядывает в Ethernet-данные и отправляет их только адресату. EN: A Layer 2 device that inspects Ethernet data and sends it only to the intended recipient.
+Node (Узел)::RU: Любое устройство, подключённое к сети; обычно сервер или клиент. EN: Any device connected to a network; typically a server or a client.
+Octet (Октет)::RU: Любое число, представимое 8 битами. EN: Any number that can be represented by 8 bits.
+Organizationally Unique Identifier (OUI)::RU: Первые три октета MAC-адреса. EN: The first three octets of a MAC address.
+OSI model (Модель OSI)::RU: 7 уровней: физический, канальный, сетевой, транспортный, сеансовый, представления, прикладной. EN: 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, Application.
+Patch panel (Патч-панель)::RU: Устройство с множеством физических сетевых портов. EN: A device containing many physical network ports.
+Payload (Полезная нагрузка)::RU: Реальные передаваемые данные — всё, что не является заголовком. EN: The actual data being transported — everything that isn't a header.
+Physical layer (Физический уровень)::RU: Представляет физические устройства, соединяющие компьютеры. EN: Represents the physical devices that interconnect computers.
+Preamble (Преамбула)::RU: Первая часть Ethernet-фрейма, 8 байт (64 бита), делится на две секции. EN: The first part of an Ethernet frame, 8 bytes (64 bits), split into two sections.
+Protocol (Протокол)::RU: Определённый набор стандартов, которым должны следовать компьютеры для общения. EN: A defined set of standards computers must follow to communicate properly.
+Router (Роутер)::RU: Устройство, пересылающее данные между независимыми сетями. EN: A device that forwards data between independent networks.
+Server (Сервер)::RU: Устройство, предоставляющее данные другому устройству (клиенту) по запросу. EN: A device that provides data to a requesting device (a client).
+Simplex communication (Симплексная связь)::RU: Передача данных только в одном направлении по кабелю. EN: Data communication that only goes in one direction across a cable.
+Source MAC address (MAC-адрес отправителя)::RU: Аппаратный адрес отправителя фрейма, идёт после MAC-адреса получателя. EN: The hardware address of the frame's sender, following the destination MAC address.
+Start Frame Delimiter (SFD)::RU: Последний байт преамбулы, сигнализирует об окончании преамбулы. EN: The last byte in the preamble, signaling the preamble is over.
+Transmission Control Protocol (TCP)::RU: Протокол 4-го уровня, требует установленного соединения между клиентом и сервером. EN: The transport-layer protocol requiring an established connection between client and server.
+Transport layer (Транспортный уровень)::RU: Определяет, какие клиентские и серверные программы должны получить данные. EN: Sorts out which client and server programs are supposed to get the data.
+Twisted pair cable (Кабель «витая пара»)::RU: Самый распространённый тип кабеля — пары медных проводов, скрученные вместе. EN: The most common cable type — pairs of copper wires twisted together.
+<!--SR:!2026-09-25,2,230-->
+Unicast transmission (Unicast-передача)::RU: Передача, всегда предназначенная только одному получателю. EN: A transmission always meant for just one receiving address.
+User Datagram Protocol (UDP)::RU: Протокол без установления соединения, без подтверждений доставки. EN: A connectionless transfer protocol with no delivery acknowledgements.
+Virtual LAN (VLAN)::RU: Техника для нескольких логических LAN на одном физическом оборудовании. EN: A technique for running multiple logical LANs on the same physical equipment.
+<!--SR:!2026-09-26,3,250-->
+VLAN header::RU: Данные, указывающие тип фрейма; идут перед полем EtherType. EN: Data indicating what the frame is; comes before the EtherType field.

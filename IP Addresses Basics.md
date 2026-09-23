@@ -1,7 +1,17 @@
 ---
-tags: [networking, coursera, network-layer, ip-addressing, bilingual]
-course: "Computer Networking (Google/Coursera)"
+tags:
+  - networking
+  - coursera
+  - network-layer
+  - ip-addressing
+  - bilingual
+  - flashcards
+  - review
+course: Computer Networking (Google/Coursera)
 created: 2026-09-21
+sr-due: 2026-09-24
+sr-interval: 1
+sr-ease: 230
 ---
 
 # Основы IP-адресов · IP Addresses Basics
@@ -62,3 +72,13 @@ EN: A **static IP address** — must be configured on a node **manually**.
 > - RU: IP-адреса раздаются организациям блоками — не производителями оборудования (в отличие от MAC/OUI) · EN: IP addresses are handed out to organizations in blocks — not assigned by hardware vendors (unlike MAC/OUI)
 > - RU: IP-адрес принадлежит **сети**, MAC-адрес принадлежит **устройству** · EN: The IP address belongs to the **network**; the MAC address belongs to the **device**
 > - RU: Dynamic IP выдаётся через DHCP автоматически; static — настраивается вручную · EN: Dynamic IP is assigned automatically via DHCP; static is configured manually
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Сколько бит в IP-адресе, и как он обычно записывается? / How many bits are in an IP address, and how is it normally written?::RU: IP-адрес — **32-битное** число из **4 октетов**, каждый обычно записывается в десятичной форме (**dotted decimal notation**), например `12.34.56.78`. EN: An IP address is a **32-bit** number made of **4 octets**, each normally written in decimal (**dotted decimal notation**), e.g. `12.34.56.78`.
+Какое максимальное значение может быть у одного октета, и почему? / What's the max value a single octet can have, and why?::RU: Максимум — **255** (диапазон 0-255), потому что октет = 8 бит, а 8 бит могут представить ровно 256 разных значений (0-255). Поэтому `123.456.789.100` — невалидный IP: 456 и 789 не помещаются в 8 бит. EN: The max is **255** (range 0-255), because an octet is 8 bits, and 8 bits can represent exactly 256 values (0-255). That's why `123.456.789.100` is invalid — 456 and 789 don't fit in 8 bits.
+Кому принадлежит IP-адрес — устройству или сети, и чем это отличается от MAC-адреса? / Does an IP address belong to the device or the network, and how does that differ from a MAC address?::RU: IP-адрес принадлежит **сети**, а не устройству — например, твой ноутбук имеет один и тот же MAC-адрес везде, но дома и в интернет-кафе получит **разные** IP-адреса (их выдаёт конкретная LAN). IP-адреса раздаются крупными блоками организациям, а не производителями оборудования, как MAC/OUI. EN: An IP address belongs to the **network**, not the device — e.g. your laptop keeps the same MAC address everywhere, but gets a **different** IP address at home vs. an internet café (each LAN hands one out). IP addresses are distributed in large blocks to organizations, not assigned by hardware vendors like MAC/OUI.
+Как назначается dynamic IP, и чем он отличается от static IP? / How is a dynamic IP assigned, and how does it differ from a static IP?::RU: **Dynamic IP** назначается **автоматически** при подключении устройства к сети через **DHCP (Dynamic Host Configuration Protocol)** — обычно так получают адрес клиенты. **Static IP** настраивается на узле **вручную** — обычно используется серверами и сетевыми устройствами. EN: A **dynamic IP** is assigned **automatically** when a device connects, via **DHCP** — typically how clients get their address. A **static IP** is configured **manually** — typically used by servers and network devices.

@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, network-layer, arp, bilingual]
+tags: [networking, coursera, network-layer, arp, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-21
 ---
@@ -73,3 +73,13 @@ EN: Almost every network-connected device keeps a local **ARP table** — a list
 > - RU: ARP-ответ (response) — это **unicast**, отправленный конкретно запросившему устройству, а не всем · EN: The ARP response is **unicast**, sent specifically to the requesting device, not to everyone
 > - RU: Записи ARP-таблицы истекают — это не постоянное хранилище · EN: ARP table entries expire — it's not permanent storage
 > - RU: ARP нужен именно потому, что для отправки Ethernet-фрейма обязателен MAC-адрес получателя в заголовке · EN: ARP is needed because an Ethernet frame's header requires the recipient's MAC address to be sent at all
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Что делает ARP, и зачем он вообще нужен? / What does ARP do, and why is it needed at all?::RU: **ARP (Address Resolution Protocol)** связывает MAC-адреса (канальный уровень) и IP-адреса (сетевой уровень): находит аппаратный (MAC) адрес узла по его IP-адресу. Он нужен, потому что для инкапсуляции IP-датаграммы в Ethernet-фрейм обязательно требуется **MAC-адрес получателя** в заголовке фрейма, а устройство изначально знает только IP-адрес. EN: **ARP** links MAC addresses (data link layer) and IP addresses (network layer): it discovers a node's MAC address given its IP. It's needed because encapsulating an IP datagram into an Ethernet frame requires the **destination MAC address** in the frame header, and a device initially only knows the IP address.
+На какой MAC-адрес отправляется ARP-запрос, и кто его получает? / What MAC address does an ARP request go to, and who receives it?::RU: ARP-запрос (**ARP request**) рассылается как **ARP-broadcast** на MAC-адрес **`FF:FF:FF:FF:FF:FF`** и доставляется **всем** компьютерам локальной сети — только устройство с искомым IP отвечает. EN: An **ARP request** is broadcast to MAC address **`FF:FF:FF:FF:FF:FF`** and delivered to **every** computer on the local network — only the device with the matching IP responds.
+ARP-ответ — unicast или broadcast, и что в нём содержится? / Is an ARP response unicast or broadcast, and what does it contain?::RU: **ARP response** — это **unicast**, отправленный конкретно запросившему устройству (а не всем), и содержит MAC-адрес устройства, у которого искомый IP. Отправитель затем вписывает этот MAC в заголовок Ethernet-фрейма. EN: An **ARP response** is **unicast**, sent specifically to the requesting device (not broadcast), and contains the MAC address of the device owning the queried IP. The sender then puts that MAC into the Ethernet frame header.
+Что происходит с записями ARP-таблицы со временем, и почему? / What happens to ARP table entries over time, and why?::RU: Записи **ARP-таблицы** обычно **истекают (expire)** через непродолжительное время — это не постоянное хранилище. Нужно это, чтобы учитывать изменения в сети (например, если у устройства сменился сетевой интерфейс или IP). EN: **ARP table** entries generally **expire** after a short time — it's not permanent storage. This ensures changes in the network are accounted for (e.g. a device getting a new network interface or IP).

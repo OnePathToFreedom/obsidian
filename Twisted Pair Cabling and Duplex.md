@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, cables, twisted-pair, bilingual]
+tags: [networking, coursera, cables, twisted-pair, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-16
 ---
@@ -106,3 +106,14 @@ EN: The primary type of Ethernet cable. Connects computers/routers → hubs/swit
 > - RU: UTP — без активной защиты; STP/FTP — с экраном · EN: UTP has no active shielding; STP/FTP are shielded
 > - RU: Straight-through = одинаковый порядок пар на обоих концах · EN: Straight-through = matching pair order on both ends
 > - RU: PoE использует синий/коричневый — актуально для gigabit, не 100Base-T · EN: PoE uses blue/brown wires — relevant for gigabit, not 100Base-T
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+От чего защищает скручивание пар проводов и почему это делают? / What does twisting wire pairs protect against, and why is it done?::RU: Скручивание пар медных проводов (**twisted pair**) защищает от **EMI** (электромагнитных помех), **RFI** (радиочастотных помех) и **crosstalk** (наводок между проводами). Ранние кабели использовали параллельные провода и сильно страдали от помех — скручивание было одним из первых инженерных решений этой проблемы. EN: Twisting copper wire pairs protects against **EMI** (electromagnetic interference), **RFI** (radio-frequency interference), and **crosstalk**. Early cables used parallel wires and suffered badly from interference — twisting was one of the first engineering fixes.
+В чём разница между full duplex и half duplex (и что такое simplex)? / What's the difference between full duplex and half duplex (and what is simplex)?::RU: **Full duplex** — оба устройства передают данные **одновременно** (под каждое направление отведена отдельная пара проводов). **Half duplex** — связь возможна в обе стороны, но **только одно** устройство передаёт в момент времени. **Simplex** — однонаправленная передача. Деградация линии до half-duplex обычно сигнализирует о проблеме соединения. EN: **Full duplex** — both devices transmit **simultaneously** (separate wire pairs per direction). **Half duplex** — communication is possible both ways, but **only one** device transmits at a time. **Simplex** — unidirectional only. A link degrading to half-duplex usually signals a connection problem.
+Чем UTP отличается от STP/FTP? / How does UTP differ from STP/FTP?::RU: **UTP (Unshielded Twisted Pair)** — базовая защита, без активного экранирования, самый дешёвый и распространённый вариант. **STP (Shielded Twisted Pair)** — с оплёткой-экраном; **FTP (Foiled Twisted Pair)** — с фольгированным экраном; оба дают высокую защиту от помех и часто взаимозаменяемы. Есть ещё **SF/FTP** — максимальная защита для промышленных сред с высоким EMI/RFI. EN: **UTP** has basic protection, no active shielding — the cheapest, most common option. **STP** (braided shield) and **FTP** (foil shield) both give high interference protection and are often interchangeable. **SF/FTP** offers the strongest protection, for high-EMI/RFI industrial settings.
+Как определить straight-through кабель и для чего он нужен? / How do you identify a straight-through cable, and what is it used for?::RU: **Straight-through cable (патч-кабель)** — основной тип Ethernet-кабеля, соединяющий, например, компьютер/роутер с хабом/свичем. Определяется по тому, что цвет и порядок пар одинаковы на **обоих** концах кабеля. EN: A **straight-through cable** is the primary Ethernet cable type, connecting e.g. a computer/router to a hub/switch. Identified by matching color and pair order on **both** ends of the cable.
+Для чего используются синий/коричневый провода в gigabit Ethernet? / What are the blue/brown wires used for in gigabit Ethernet?::RU: Стандарт **100Base-T** для домашних сетей их вообще не использует, но в **gigabit Ethernet** синий/коричневый провода могут применяться для **PoE (Power over Ethernet)** — то есть по тому же кабелю передаётся и питание для устройства. EN: The **100Base-T** home-network standard doesn't use them at all, but in **gigabit Ethernet** the blue/brown wires can carry **PoE (Power over Ethernet)** — powering a device over the same cable.

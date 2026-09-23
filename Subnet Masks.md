@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, network-layer, subnetting, bilingual]
+tags: [networking, coursera, network-layer, subnetting, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-21
 ---
@@ -126,6 +126,20 @@ EN: Instead of writing out the full mask, you can use **shorthand notation** —
 > RU: Обе формы записи (полная маска и `/N`) одинаково распространены — важно понимать обе.
 > EN: Neither notation is more common than the other — it's important to understand both.
 
+> [!example] Таблица соответствий (последний октет маски) / Lookup table (last mask octet)
+> | Маска / Mask | Последний октет двоично / Last octet binary | `/N` | Host-бит / Host bits | Адресов / Addresses |
+> |---|---|---|---|---|
+> | 255.255.255.0 | `00000000` | `/24` | 8 | 256 |
+> | 255.255.255.128 | `10000000` | `/25` | 7 | 128 |
+> | 255.255.255.192 | `11000000` | `/26` | 6 | 64 |
+> | 255.255.255.224 | `11100000` | `/27` | 5 | 32 |
+> | 255.255.255.240 | `11110000` | `/28` | 4 | 16 |
+> | 255.255.255.248 | `11111000` | `/29` | 3 | 8 |
+> | 255.255.255.252 | `11111100` | `/30` | 2 | 4 |
+>
+> RU: Логика: чем **больше** `N` (единиц в маске) — тем **меньше** бит остаётся под Host ID — тем **меньше** узлов помещается в подсеть, но тем **больше** самих подсетей можно нарезать.
+> EN: Logic: the **higher** `N` (more mask ones) — the **fewer** bits are left for the Host ID — the **fewer** hosts fit per subnet, but the **more** subnets you can carve out.
+
 ---
 
 > [!warning] Частые ошибки / Common mistakes
@@ -134,3 +148,13 @@ EN: Instead of writing out the full mask, you can use **shorthand notation** —
 > - RU: Из общего числа адресов обычно вычитают 2 (network address + broadcast), но размер подсети всё равно называют полным числом · EN: 2 addresses are typically subtracted (network address + broadcast), but subnet size is still stated as the full number
 > - RU: `/N` в CIDR-нотации — это количество **единиц** в маске (длина префикса), а не нулей · EN: The `/N` in CIDR notation is the number of **ones** in the mask (prefix length), not zeros
 > - RU: Маска не обязана совпадать с границами октетов (например, `/27` режет внутри последнего октета) · EN: A mask doesn't have to align with octet boundaries (e.g. `/27` cuts inside the last octet)
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Что означают единицы и нули в маске подсети? / What do the ones and zeros in a subnet mask mean?::RU: **Subnet mask (маска подсети)** — 32-битное число: сначала строка **единиц**, затем строка **нулей**. Единицы показывают, что нужно **игнорировать** при вычислении Host ID (это область Network ID + Subnet ID); нули показывают, что нужно **оставить** — это и есть Host ID. EN: A **subnet mask** is a 32-bit number: a string of **ones**, then a string of **zeros**. The ones mark what to **ignore** when computing the Host ID (the Network ID + Subnet ID area); the zeros mark what to **keep** — the Host ID.
+Как посчитать количество адресов в подсети по маске? / How do you calculate the number of addresses in a subnet from the mask?::RU: Количество адресов = **2ⁿ**, где n — число **нулевых** бит маски. Например, маска `255.255.255.0` (24 единицы, 8 нулей) даёт 2⁸ = 256 адресов; из них обычно вычитают 2 (адрес сети и broadcast), но размер подсети всё равно называют полным числом. EN: The address count = **2ⁿ**, where n is the number of **zero** bits in the mask. E.g. mask `255.255.255.0` (24 ones, 8 zeros) gives 2⁸ = 256 addresses; 2 are typically subtracted (network address + broadcast), but subnet size is still quoted as the full number.
+Что означает /27 в CIDR-нотации, и как это связано с полной записью маски? / What does /27 mean in CIDR notation, and how does it relate to the full mask notation?::RU: `/27` — сокращённая (CIDR) запись маски, где число после слэша = количество **единиц** в маске. `/27` соответствует полной записи **255.255.255.224** (27 единиц, 5 нулей → 2⁵ = 32 адреса в подсети). Обе формы записи одинаково распространены. EN: `/27` is CIDR shorthand where the number after the slash = the count of **ones** in the mask. `/27` corresponds to the full mask **255.255.255.224** (27 ones, 5 zeros → 2⁵ = 32 addresses per subnet). Both notations are equally common.
+Обязана ли маска совпадать с границами октетов? Приведи пример. / Does a mask have to align with octet boundaries? Give an example.::RU: Нет — маска может "резать" внутри октета. Пример: маска `255.255.255.224` в двоичном виде — это **27 единиц, затем 5 нулей**, то есть граница проходит внутри последнего октета (224 = `11100000`), а не по его краю. EN: No — a mask can cut inside an octet. Example: mask `255.255.255.224` in binary is **27 ones, then 5 zeros** — the boundary falls inside the last octet (224 = `11100000`), not at its edge.

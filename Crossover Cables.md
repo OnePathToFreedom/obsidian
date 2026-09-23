@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, cables, twisted-pair, bilingual]
+tags: [networking, coursera, cables, twisted-pair, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-21
 ---
@@ -67,3 +67,13 @@ EN: Green wires at pins 1-2 on one end move to pins 3-6 on the other; orange wir
 > - RU: Straight-through = T568B на обоих концах; crossover = T568A + T568B · EN: Straight-through = T568B both ends; crossover = T568A + T568B
 > - RU: Синий/коричневый провода в crossover **не** перекрещиваются · EN: Blue/brown wires do **not** cross over in a crossover cable
 > - RU: Кроссовер нужен, когда оба устройства используют одни и те же провода для send/receive (напрямую, без свича) · EN: Crossover is needed when both devices use the same wires for send/receive (direct connection, no switch)
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Для чего нужен кроссовер-кабель? Приведи пример сценария. / What is a crossover cable for? Give an example scenario.::RU: **Кроссовер-кабель (Crossover cable)** соединяет два вычислительных устройства **напрямую** друг с другом (без свича/хаба между ними) — например, два свича, два ПК, роутер с ПК. Типичный сценарий: IT-специалист подключает короткий кроссовер-кабель между своим ноутбуком и management-портом enterprise-устройства для администрирования. EN: A **crossover cable** connects two computing devices **directly** to each other (no switch/hub between them) — e.g. two switches, two PCs, a router to a PC. Typical use: an IT specialist connects a laptop directly to an enterprise device's management port for admin tasks.
+Какая технология делает кроссовер-кабель необязательным на новом оборудовании, и как она работает? / What technology makes crossover cables unnecessary on new hardware, and how does it work?::RU: **Auto-MDI/MDIX** — большинство новых устройств умеют сами определять тип Ethernet-подключения и автоматически выбирать нужные провода для передачи/приёма, заменяя тем самым функцию кроссовер-кабеля. Но сами кроссовер-кабели по-прежнему встречаются в старых сетях. EN: **Auto-MDI/MDIX** — most new devices can auto-detect the connection type and automatically pick the right send/receive wires, replacing the need for a crossover cable. Crossover cables still turn up in older networks, though.
+Какие схемы разводки использует кроссовер-кабель на двух концах, и чем это отличается от straight-through? / Which wiring schemes does a crossover cable use at its two ends, and how does that differ from straight-through?::RU: Straight-through кабели используют схему **T568B на обоих концах**. Кроссовер-кабели используют **обе** схемы — **T568A на одном конце, T568B на другом** — именно эта разница создаёт "перекрёстную" разводку, нужную для соединения двух устройств, использующих одни и те же провода для send/receive. EN: Straight-through cables use **T568B on both ends**. Crossover cables use **both** schemes — **T568A on one end, T568B on the other** — this difference is what creates the "crossed" wiring needed to connect two devices that transmit/receive on the same wires.
+Перекрещиваются ли синий/коричневый провода в crossover-кабеле? / Do the blue/brown wires cross over in a crossover cable?::RU: Нет — синий и коричневый провода в T568A/T568B разводке **не** перекрещиваются; перекрещиваются только зелёная и оранжевая пары (позиции 1-2 ↔ 3-6). EN: No — the blue and brown wires in the T568A/T568B wiring do **not** cross over; only the green and orange pairs swap (pins 1-2 ↔ 3-6).

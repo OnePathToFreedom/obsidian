@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, physical-layer, bilingual]
+tags: [networking, coursera, physical-layer, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-16
 ---
@@ -55,3 +55,13 @@ EN: In networking, this modulation is specifically called **line coding** — de
 > - RU: Line coding — разновидность модуляции для сетей · EN: Line coding is modulation **specifically for networks**
 > - RU: Передаётся напряжение, не сила тока · EN: It's **voltage**, not current, that's varied
 > - RU: Всё сводится к передаче бит на физическом уровне · EN: Everything reduces to bit transmission at the physical layer
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Что такое бит и какова его роль в сети? / What is a bit, and what's its role in networking?::RU: **Бит (Bit)** — наименьшая единица данных, понятная компьютеру: либо 0, либо 1. Задача физического уровня — двигать биты от одного конца линии к другому; эти биты в итоге складываются во фреймы и пакеты на более высоких уровнях. EN: A **bit** is the smallest unit of data a computer understands: either 0 or 1. The physical layer's job is moving bits from one end of a link to the other; these bits ultimately make up the frames and packets used at higher layers.
+Что такое модуляция и как она работает на медном кабеле? / What is modulation, and how does it work on a copper cable?::RU: **Модуляция (Modulation)** — способ изменения напряжения постоянного электрического заряда, который несёт медный кабель, чтобы передавать биты. Устройства договариваются, какое напряжение означает 0, а какое — 1. EN: **Modulation** is a way of varying the voltage of the constant electrical charge a copper cable carries, in order to transmit bits. Devices agree on which voltage state means 0 and which means 1.
+Как называется модуляция применительно конкретно к сетям? / What is modulation called specifically in networking?::RU: **Line coding (линейное кодирование)** — так называется модуляция именно в сетевом контексте; современные сети способны передавать до 10 миллиардов бит в секунду по одному кабелю такой техникой. EN: **Line coding** — this is the term for modulation specifically in a networking context; modern networks can move up to 10 billion bits per second across a single cable using this technique.
+Что именно меняется при line coding — напряжение или сила тока? / What is varied in line coding — voltage or current?::RU: Меняется **напряжение (voltage)**, а не сила тока — именно колебания напряжения интерпретируются как последовательность бит 0 и 1. EN: What's varied is **voltage**, not current — voltage fluctuations are what get interpreted as a sequence of 0 and 1 bits.

@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, network-layer, ip-addressing, bilingual]
+tags: [networking, coursera, network-layer, ip-addressing, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-21
 ---
@@ -155,3 +155,14 @@ EN: The IP datagram also has its own payload — and its contents are, in turn, 
 > - RU: Checksum пересчитывается на каждом хопе, т.к. TTL меняется · EN: The checksum is recomputed at every hop because TTL changes
 > - RU: Protocol field указывает транспортный протокол (TCP/UDP), Version field — версию IP · EN: The Protocol field identifies the transport protocol (TCP/UDP); the Version field identifies the IP version — don't mix them up
 > - RU: Инкапсуляция: Ethernet-фрейм ⊃ IP-датаграмма ⊃ TCP/UDP-пакет · EN: Encapsulation nesting: Ethernet frame ⊃ IP datagram ⊃ TCP/UDP packet
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Какая минимальная длина заголовка IPv4, и какое поле её задаёт? / What's the minimum IPv4 header length, and which field declares it?::RU: Поле **Header Length (IHL)**, 4 бита, указывает длину заголовка — для IPv4 почти всегда **20 байт**. Это одновременно и минимальная длина: меньше физически невозможно уместить обязательные поля. EN: The **Header Length (IHL)** field, 4 bits, declares the header's length — for IPv4 almost always **20 bytes**. This is also the minimum: fewer bytes can't physically hold the required fields.
+Какой максимальный размер одной IP-датаграммы, и откуда берётся это число? / What's the max size of a single IP datagram, and where does that number come from?::RU: Максимум — **65 535 байт**. Он определяется полем **Total Length**, которое занимает 16 бит: 2¹⁶ − 1 = 65 535. Больше в одну датаграмму физически не помещается. EN: The max is **65,535 bytes**, set by the **Total Length** field, which is 16 bits: 2¹⁶ − 1 = 65,535. A single datagram can't be larger.
+Что делает поле TTL, и что происходит, когда оно достигает 0? / What does the TTL field do, and what happens when it reaches 0?::RU: **TTL (Time to Live)**, 8 бит, задаёт, сколько **router hops** (переходов через роутеры) датаграмма может пройти. Каждый роутер уменьшает TTL на 1; при достижении **0** роутер прекращает пересылку. Цель — предотвратить бесконечное блуждание датаграммы при ошибке маршрутизации (например, при петле). EN: **TTL (Time to Live)**, 8 bits, sets how many **router hops** a datagram may traverse. Each router decrements it by 1; at **0** the router stops forwarding. Its purpose is preventing an infinite loop from a routing misconfiguration.
+Почему checksum IP-датаграммы пересчитывается на каждом роутере? / Why is the IP datagram's header checksum recomputed at every router?::RU: Потому что поле **TTL** уменьшается на каждом хопе, а **Header Checksum** — это контрольная сумма всего заголовка, включая TTL. Раз TTL меняется — checksum обязательно нужно пересчитать заново. EN: Because the **TTL** field is decremented at every hop, and the **Header Checksum** covers the entire header, including TTL. Since TTL changes, the checksum has to be recomputed each time.
+Опиши порядок инкапсуляции от Ethernet-фрейма до данных приложения. / Describe the encapsulation order from the Ethernet frame down to application data.::RU: Это "матрёшка" уровней: **Ethernet Frame ⊃ IP Datagram ⊃ TCP/UDP Packet ⊃ Application data** — то есть вся IP-датаграмма становится payload Ethernet-фрейма, а внутри самой датаграммы её payload — это целиком TCP- или UDP-пакет, и так далее. EN: It's a layered "nesting doll": **Ethernet Frame ⊃ IP Datagram ⊃ TCP/UDP Packet ⊃ Application data** — the entire IP datagram becomes the Ethernet frame's payload, and the datagram's own payload is, in turn, an entire TCP or UDP packet, and so on.

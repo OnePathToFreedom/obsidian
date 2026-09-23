@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, bilingual]
+tags: [networking, coursera, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-16
 ---
@@ -101,3 +101,14 @@ created: 2026-09-16
 > - RU: Роутер → сетевой уровень · EN: Routers operate at the **network** layer
 > - RU: IP → сетевой; TCP/UDP → транспортный · EN: IP is **network**-layer; TCP/UDP are **transport**-layer
 > - RU: Ethernet → канальный уровень · EN: Ethernet → **data link** layer
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Сколько уровней в модели TCP/IP и как они называются (снизу вверх)? / How many layers does the TCP/IP model have, bottom to top?::RU: Модель TCP/IP состоит из **5 уровней**: Physical (физический), Data Link (канальный), Network (сетевой), Transport (транспортный), Application (прикладной). Каждый уровень решает свою задачу и абстрагирует уровень под собой от вышестоящих. EN: The TCP/IP model has **5 layers**: Physical, Data Link, Network, Transport, Application. Each layer handles its own job and hides the layer below it from the ones above.
+На каком уровне работает Ethernet и что он делает? / Which layer does Ethernet operate at, and what does it do?::RU: **Ethernet** — главный протокол **канального уровня (Data Link layer, уровень 2)**. Он определяет, как интерпретировать сигналы физического уровня, чтобы устройства могли общаться в пределах **одной** сети/линии. EN: **Ethernet** is the main **Data Link layer (layer 2)** protocol. It defines how to interpret physical-layer signals so devices can communicate within a **single** network/link.
+На каком уровне работает IP и что он делает? / Which layer does IP operate at, and what does it do?::RU: **IP (Internet Protocol)** — главный протокол **сетевого уровня (Network layer, уровень 3)**. Он обеспечивает связь **между разными** сетями через роутеры; совокупность таких сетей называется **интернетворк**. EN: **IP** is the main **Network layer (layer 3)** protocol. It handles communication **between different** networks via routers; a collection of such networks is called an **internetwork**.
+Что делает транспортный уровень и какие у него протоколы? / What does the transport layer do, and what protocols does it use?::RU: **Транспортный уровень (Transport layer, уровень 4)** разносит данные по нужным приложениям на устройстве, а не просто доставляет их на сам узел. Протоколы: **TCP** (надёжный, с установлением соединения) и **UDP** (быстрее, но без гарантий доставки). EN: The **Transport layer (layer 4)** sorts data to the right application on a device, rather than just delivering it to the node. Protocols: **TCP** (reliable, connection-based) and **UDP** (faster, no delivery guarantee).
+Какой уровень отвечает за кабели и передачу сигнала? / Which layer handles cabling and signal transmission?::RU: **Физический уровень (Physical layer, уровень 1)** — самый нижний уровень модели, отвечает за кабели, разъёмы и саму передачу сигнала («железо»). EN: The **Physical layer (layer 1)** is the model's bottom-most layer, responsible for cables, connectors, and the actual signal transmission (the "hardware").

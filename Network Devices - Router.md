@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, network-devices, bilingual]
+tags: [networking, coursera, network-devices, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-16
 ---
@@ -79,3 +79,15 @@ EN: The protocol routers use to share information about optimal paths for forwar
 > - RU: Роутер смотрит на IP-данные, свич — на Ethernet · EN: Router inspects **IP data**; switch inspects Ethernet data
 > - RU: BGP — обмен маршрутной инфой между роутерами · EN: BGP is how routers **exchange routing information**
 > - RU: Домашний роутер ≠ core-роутер по сложности · EN: A home router and a core router differ greatly in complexity
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+На каком уровне работает роутер и чем он занимается? / What layer does a router operate at, and what does it do?::RU: **Роутер (Router)** — устройство **сетевого уровня (Layer 3)**, пересылающее данные между **независимыми сетями** (в отличие от свича, который работает внутри одной LAN). EN: A **router** is a **network layer (Layer 3)** device that forwards data between **independent networks** (unlike a switch, which works within a single LAN).
+Во что "заглядывает" роутер, чтобы принять решение о маршрутизации? / What does a router inspect to make routing decisions?::RU: Роутер заглядывает в **IP-данные** пакета (так же, как свич заглядывает в Ethernet-данные), чтобы решить, куда переслать трафик дальше. EN: A router inspects the packet's **IP data** (the way a switch inspects Ethernet data) to decide where to forward traffic next.
+Что хранит роутер для маршрутизации? / What does a router store for routing?::RU: Роутер хранит **routing tables (таблицы маршрутизации)** — информацию о том, как добраться до множества сетей по всему миру. У домашнего роутера таблица простая, у core-роутера ISP — намного сложнее. EN: A router stores **routing tables** — information on how to reach networks all over the world. A home router's table is simple; an ISP core router's is far more complex.
+Что такое BGP и зачем он нужен? / What is BGP and why is it needed?::RU: **BGP (Border Gateway Protocol)** — протокол, через который роутеры обмениваются информацией об оптимальных путях для пересылки трафика. Именно BGP позволяет core-роутерам интернета согласовывать маршруты между собой. EN: **BGP (Border Gateway Protocol)** is the protocol routers use to share information about optimal paths for forwarding traffic. It's what lets internet core routers coordinate routes with each other.
+<!--SR:!2026-09-24,1,230-->
+Чем отличается домашний/офисный роутер от core-роутера ISP? / How does a home/office router differ from an ISP core router?::RU: **Домашний роутер** — простые таблицы маршрутизации, главная задача — забирать трафик из LAN и пересылать его к ISP. **Core-роутер** — формирует backbone интернета, обрабатывает намного больше трафика, принимает более сложные решения о маршрутизации и имеет много подключений к другим роутерам. EN: A **home router** has simple routing tables; its main job is forwarding LAN traffic to the ISP. A **core router** forms the internet's backbone, handles far more traffic, makes more complex routing decisions, and has many connections to other routers.

@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, data-link-layer, ethernet, bilingual]
+tags: [networking, coursera, data-link-layer, ethernet, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-21
 ---
@@ -126,3 +126,14 @@ EN: Calculated via **CRC (Cyclical Redundancy Check)** — a mathematical transf
 > - RU: EtherType — 16 бит, показывает протокол содержимого, а не сам протокол данных · EN: EtherType is 16 bits and identifies the protocol of the contents
 > - RU: VLAN header, если есть, идёт **перед** EtherType · EN: The VLAN header, when present, comes **before** EtherType
 > - RU: Ethernet обнаруживает повреждение данных, но НЕ восстанавливает их · EN: Ethernet detects corruption but does NOT recover the data
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Из скольки байт состоит preamble, и из каких частей? / How many bytes is the preamble, and what parts does it have?::RU: **Preamble (преамбула)** — 8 байт (64 бита), первая часть Ethernet-фрейма. Делится на: первые **7 байт** — чередующиеся единицы и нули, помогающие устройствам синхронизировать внутренние часы; последний байт — **SFD (Start Frame Delimiter)**, сигнализирующий об окончании преамбулы. EN: The **preamble** is 8 bytes (64 bits), the frame's first part. Split into: the first **7 bytes** — alternating 1s and 0s that help devices sync their clocks; the last byte — the **SFD**, signaling the preamble is over.
+Какой диапазон размера payload у Ethernet-фрейма? / What's the payload size range of an Ethernet frame?::RU: **Payload (полезная нагрузка)** Ethernet-фрейма — от **46 до 1500 байт**; содержит данные с более высоких уровней (IP, транспортный, прикладной). EN: An Ethernet frame's **payload** ranges from **46 to 1500 bytes**; it contains data from higher layers (IP, transport, application).
+Из скольки байт состоит FCS, и как он вычисляется? / How many bytes is the FCS, and how is it computed?::RU: **FCS (Frame Check Sequence)** — 4 байта (32 бита), контрольная сумма всего фрейма. Вычисляется через **CRC (Cyclical Redundancy Check)** — математическое преобразование (полиномиальное деление), сжимающее данные фрейма в одно число. EN: The **FCS (Frame Check Sequence)** is 4 bytes (32 bits), a checksum of the whole frame. It's computed via **CRC (Cyclical Redundancy Check)** — a mathematical transform (polynomial division) compressing the frame's data into one number.
+Что делает Ethernet, если CRC на приёмнике не совпал с полученным FCS? / What does Ethernet do if the receiver's recomputed CRC doesn't match the received FCS?::RU: Если контрольные суммы **не совпадают**, значит данные были повреждены или потеряны при передаче — Ethernet **отбрасывает** такой фрейм. Важно: Ethernet только **обнаруживает** проблему целостности, но сам **не восстанавливает** данные — это задача протокола более высокого уровня. EN: If the checksums **don't match**, the data was corrupted or lost in transit — Ethernet **discards** the frame. Importantly, Ethernet only **detects** the integrity problem; it does **not** recover the data itself — that's a higher-layer protocol's job.
+Где расположен VLAN header относительно EtherType, и зачем он вообще нужен? / Where is the VLAN header located relative to EtherType, and why does it exist?::RU: Если VLAN header присутствует, он идёт **перед** полем EtherType (которое следует сразу за ним). **VLAN (Virtual LAN)** — техника, позволяющая иметь несколько логических LAN на одном физическом оборудовании; фрейм с VLAN-тегом пересылается только через интерфейсы свича, настроенные на этот тег. EN: When present, the VLAN header comes **before** the EtherType field (which follows right after it). **VLAN** is a technique for running multiple logical LANs on the same physical equipment; a VLAN-tagged frame is only forwarded out of switch interfaces configured for that tag.

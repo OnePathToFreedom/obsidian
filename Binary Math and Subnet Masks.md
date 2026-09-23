@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, binary, subnetting, bilingual]
+tags: [networking, coursera, binary, subnetting, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-21
 ---
@@ -135,3 +135,14 @@ EN: ANDing the IP address and the mask bit-by-bit gives the **Network ID + Subne
 > - RU: OR — истина, если хотя бы один true; AND — истина, только если **оба** true · EN: OR is true if at least one is true; AND is true only if **both** are true
 > - RU: Маска подсети применяется через **AND**, а не OR · EN: The subnet mask is applied via **AND**, not OR
 > - RU: Результат AND(IP, маска) = Network ID + Subnet ID, а не просто Network ID · EN: AND(IP, mask) result = Network ID + Subnet ID, not just Network ID
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+При каком значении происходит перенос разряда в двоичном сложении, и чем это отличается от десятичной системы? / At what value does binary addition carry to the next column, and how does that differ from decimal?::RU: В **двоичной системе (binary)** перенос в следующий разряд происходит при достижении **2** (`1 + 1 = 10`), тогда как в десятичной — при достижении **10**. Принцип счёта одинаков в обеих системах: когда цифры в столбце заканчиваются, добавляется новый столбец слева — просто в binary всего две цифры (0 и 1). EN: In **binary**, the carry happens at **2** (`1 + 1 = 10`), whereas in decimal it happens at **10**. The counting principle is the same in both: when a column runs out of digits, a new column is added on the left — binary just has only two digits (0 and 1).
+Какая формула определяет, сколько чисел можно представить N битами? / What formula determines how many numbers N bits can represent?::RU: Формула — **2ⁿ**, где n = количество бит. Например, 8 бит → 2⁸ = 256 чисел (0-255); 4 бита → 2⁴ = 16 чисел. Эта формула на самом деле общая для любой системы счисления: **(основание)^(число разрядов)**. EN: The formula is **2ⁿ**, where n = number of bits. E.g. 8 bits → 2⁸ = 256 numbers (0-255); 4 bits → 2⁴ = 16 numbers. The formula generalizes to any base: **base^(number of digits)**.
+Когда логический оператор OR даёт результат true? / When does the logical OR operator give a true result?::RU: **OR** даёт **true**, если **хотя бы одно** из значений true (`1 OR 0 = 1`, `0 OR 0 = 0`, `1 OR 1 = 1`). В компьютерной логике `1` = true, `0` = false. EN: **OR** gives **true** if **at least one** of the values is true (`1 OR 0 = 1`, `0 OR 0 = 0`, `1 OR 1 = 1`). In computer logic, `1` = true, `0` = false.
+Когда логический оператор AND даёт результат true? / When does the logical AND operator give a true result?::RU: **AND** даёт **true**, только если **оба** значения true (`1 AND 1 = 1`, остальные комбинации = 0). Именно этот оператор используется для применения маски подсети к IP-адресу. EN: **AND** gives **true** only if **both** values are true (`1 AND 1 = 1`, every other combination = 0). This is exactly the operator used to apply a subnet mask to an IP address.
+Каким логическим оператором маска подсети применяется к IP-адресу, и что даёт результат? / Which logical operator is used to apply a subnet mask to an IP address, and what does the result give you?::RU: Маска применяется через оператор **AND** (не OR). Если побитово сложить (AND) IP-адрес и маску, результат покажет **Network ID + Subnet ID** этого адреса; всё, что "выпало" — это Host ID. Например: `9.100.100.100 AND 255.255.255.0 = 9.100.100.0`. EN: The mask is applied via **AND** (not OR). Bitwise-ANDing the IP address and mask gives the address's **Network ID + Subnet ID**; whatever's left out is the Host ID. E.g.: `9.100.100.100 AND 255.255.255.0 = 9.100.100.0`.

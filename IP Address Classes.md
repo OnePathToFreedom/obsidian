@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, network-layer, ip-addressing, bilingual]
+tags: [networking, coursera, network-layer, ip-addressing, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-21
 ---
@@ -95,6 +95,23 @@ EN: **Class E** — the remaining addresses (240–255). Unassigned, used only f
 RU: На практике система классов в основном заменена системой **CIDR (Classless Inter-Domain Routing)**. Но сама классовая система всё ещё применяется местами и важна для понимания основ сетей.
 EN: In practical terms, the class system has mostly been replaced by **CIDR (Classless Inter-Domain Routing)**. But the class system is still in place in many ways and matters for a well-rounded networking foundation.
 
+### Почему появился CIDR · Why CIDR was introduced
+
+RU: Классовая система создавала две конкретные проблемы:
+EN: The class system created two specific problems:
+
+1. RU: **Расточительность адресов.** Компании с 500 узлами не хватало Class C (256 адресов), приходилось брать целый Class B (65 536 адресов) — десятки тысяч адресов пропадали неиспользованными.
+   EN: **Address waste.** A company with 500 hosts couldn't fit in a Class C (256 addresses) and had to take a whole Class B (65,536 addresses) — tens of thousands of addresses went unused.
+2. RU: **Раздутие таблиц маршрутизации.** Каждая отдельно выданная сеть — отдельная запись в таблице core-роутеров интернета. Рост числа сетей делал эти таблицы слишком большими.
+   EN: **Routing table bloat.** Each individually issued network is a separate entry in internet core routers' tables. As the number of networks grew, these tables became too large.
+
+RU: **CIDR** решает обе проблемы: маску можно резать **в любом месте** (не только по границам октета — см. пример `/27` в [[Subnet Masks]]), выделяя блок ровно под нужный размер. Это также называют **VLSM (Variable Length Subnet Masking)** — подсети внутри одной организации могут быть **разного размера**.
+EN: **CIDR** solves both: the mask can be cut **anywhere** (not just at octet boundaries — see the `/27` example in [[Subnet Masks]]), allocating a block sized exactly to need. This is also called **VLSM (Variable Length Subnet Masking)** — subnets within one organization can be **different sizes**.
+
+> [!example] Route aggregation (супернеттинг) / Route aggregation
+> RU: Если провайдер владеет 256 смежными блоками `/24`, он может анонсировать их core-роутерам **одной записью** `/16` вместо 256 отдельных строк — резко сокращая размер таблицы маршрутизации.
+> EN: If a provider owns 256 contiguous `/24` blocks, it can advertise them to core routers as **one** `/16` entry instead of 256 separate rows — drastically shrinking the routing table.
+
 ---
 
 > [!warning] Частые ошибки / Common mistakes
@@ -104,3 +121,15 @@ EN: In practical terms, the class system has mostly been replaced by **CIDR (Cla
 > - RU: Class D — не "ещё один диапазон сетей", а специально для **multicast** · EN: Class D isn't "just another network range" — it's specifically for **multicast**
 > - RU: Class E не назначается устройствам, только для тестов · EN: Class E is not assigned to devices, only used for testing
 > - RU: Классовая система сегодня в основном вытеснена **CIDR** · EN: The class system has mostly been replaced today by **CIDR**
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Сколько октетов под Network ID у Class A, и сколько адресов это даёт? / How many octets does Class A use for the Network ID, and how many addresses does that give?::RU: **Class A** отдаёт под Network ID всего **1 октет** (первый бит адреса = `0`, диапазон первого октета 0–127), а оставшиеся **3 октета** (24 бита) — под Host ID → 2²⁴ = **16 777 216** адресов на сеть. EN: **Class A** uses just **1 octet** for the Network ID (leading bit `0`, first-octet range 0–127), leaving **3 octets** (24 bits) for the Host ID → 2²⁴ = **16,777,216** addresses per network.
+Сколько октетов под Network ID у Class C, и сколько адресов это даёт? / How many octets does Class C use for the Network ID, and how many addresses does that give?::RU: **Class C**, наоборот, отдаёт под Network ID **3 октета** (первые биты `110`, диапазон 192–223), оставляя всего **1 октет** (8 бит) под Host ID → 2⁸ = **256** адресов на сеть — самое маленькое число среди основных классов. EN: **Class C** uses **3 octets** for the Network ID (leading bits `110`, range 192–223), leaving just **1 octet** (8 bits) for the Host ID → 2⁸ = **256** addresses per network — the smallest among the main classes.
+Какой диапазон первого октета у Class B, и как это связано с ведущими битами? / What's Class B's first-octet range, and how does that relate to its leading bits?::RU: **Class B** — первые биты адреса `10`, диапазон первого октета **128–191**; под Network ID отводится 2 октета, под Host ID — тоже 2 октета (65 534 доступных адреса). EN: **Class B** — leading bits `10`, first-octet range **128–191**; 2 octets go to Network ID, 2 octets to Host ID (65,534 usable addresses).
+Для чего используется Class D, и как его узнать? / What is Class D used for, and how do you recognize it?::RU: **Class D** (диапазон 224–239, ведущие биты `1110`) используется для **multicast** — способа отправить одну IP-датаграмму сразу целой группе получателей. Это не "ещё один диапазон сетей", а специальное назначение. EN: **Class D** (range 224–239, leading bits `1110`) is used for **multicast** — sending a single IP datagram to an entire group of recipients at once. It's not "just another network range" — it's a special-purpose class.
+Чем CIDR отличается от классовой системы (A/B/C/D/E)? / How does CIDR differ from the class-based system (A/B/C/D/E)?::RU: Классовая система жёстко привязывает размер сети к границам октетов. **CIDR (Classless Inter-Domain Routing)** позволяет резать маску **в любом месте** (например `/27` — внутри последнего октета), выделяя блок ровно под нужный размер сети — отсюда и "classless" (безклассовый). EN: The class system rigidly ties network size to octet boundaries. **CIDR** lets you cut the mask **anywhere** (e.g. `/27` inside the last octet), allocating a block sized exactly to need — hence "classless."
+Что такое route aggregation (супернеттинг) в контексте CIDR? / What is route aggregation (supernetting) in the context of CIDR?::RU: **Route aggregation** — объединение множества смежных сетевых блоков в **одну** запись маршрутизации. Например, 256 смежных блоков `/24` можно анонсировать core-роутерам одной записью `/16`, резко сокращая размер таблицы маршрутизации. EN: **Route aggregation** combines many contiguous network blocks into a **single** routing table entry. E.g. 256 contiguous `/24` blocks can be advertised to core routers as one `/16` entry, drastically shrinking the routing table.

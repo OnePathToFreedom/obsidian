@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, data-link-layer, ethernet, bilingual]
+tags: [networking, coursera, data-link-layer, ethernet, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-21
 ---
@@ -134,3 +134,17 @@ EN: Used so devices can learn about each other on the network.
 > - RU: Свича в 1983 году ещё не было — отсюда общий collision domain · EN: The switch didn't exist in 1983 — hence the shared collision domain
 > - RU: Даже unicast физически доходит до всех в collision domain — просто обрабатывается только адресатом · EN: Even unicast physically reaches everyone in the collision domain — only the addressee processes it
 > - RU: Broadcast-адрес — все биты **единицы**, не нули · EN: The broadcast address is all bits set to **one**, not zero
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Что такое MAC-адрес, сколько в нём бит и как он записывается? / What is a MAC address, how many bits does it have, and how is it written?::RU: **MAC-адрес (Media Access Control address)** — глобально уникальный идентификатор сетевого интерфейса, **48-битное** число. Обычно записывается как 6 групп по 2 шестнадцатеричных (hex) цифры, где каждая группа = октет. EN: A **MAC address** is a globally unique identifier for a network interface, a **48-bit** number. Usually written as 6 groups of 2 hexadecimal digits, where each group is one octet.
+Что такое OUI и сколько октетов он занимает? / What is the OUI, and how many octets does it take?::RU: **OUI (Organizationally Unique Identifier)** — первые **3 октета** MAC-адреса; их назначает IEEE производителю оборудования. По OUI всегда можно определить производителя сетевого интерфейса. Оставшиеся 3 октета назначает уже сам производитель, уникально в рамках своего OUI. EN: The **OUI** is the first **3 octets** of a MAC address, assigned by IEEE to a manufacturer. You can always identify a device's manufacturer from its OUI. The remaining 3 octets are assigned by the manufacturer itself, unique within its OUI.
+Что делает CSMA/CD и как он работает? / What does CSMA/CD do, and how does it work?::RU: **CSMA/CD (Carrier Sense Multiple Access with Collision Detection)** — техника, которую Ethernet использует для решения проблемы коллизий в общем collision domain: (1) если канал свободен — узел передаёт; (2) если два устройства передают одновременно — коллизия, оба останавливаются; (3) каждое ждёт случайный интервал перед повторной попыткой. EN: **CSMA/CD** is how Ethernet handles collisions in a shared collision domain: (1) if the channel is free, a node transmits; (2) if two devices transmit at once, a collision occurs and both stop; (3) each waits a random interval before retrying.
+Какой бит MAC-адреса определяет unicast/multicast, и что означают его значения? / Which bit of a MAC address determines unicast vs multicast, and what do its values mean?::RU: **I/G bit** — младший бит первого октета адреса получателя. `0` = **unicast** (одному адресату), `1` = **multicast** (группе адресатов по подписке). EN: The **I/G bit** — the least significant bit of the first octet of the destination address. `0` = **unicast** (one recipient), `1` = **multicast** (a subscribed group).
+Какой MAC-адрес используется для broadcast, и что это значит? / What MAC address is used for broadcast, and what does that mean?::RU: Broadcast-адрес — **`FF:FF:FF:FF:FF:FF`**, то есть все биты установлены в единицу. Фрейм с таким адресом получателя отправляется **абсолютно всем** устройствам в LAN — используется, чтобы устройства могли "узнавать" друг о друге. EN: The broadcast address is **`FF:FF:FF:FF:FF:FF`** — every bit set to 1. A frame with this destination address is sent to **every single device** on the LAN — used so devices can learn about each other.
+<!--SR:!2026-09-24,1,230-->
+Доходит ли unicast-фрейм физически до всех устройств в collision domain? / Does a unicast frame physically reach every device in the collision domain?::RU: Да — физически unicast-фрейм всё равно расходится по всем устройствам общего collision domain (это общая среда передачи), но **обрабатывает** его только то устройство, чей MAC-адрес совпадает с адресом получателя; остальные его отбрасывают. EN: Yes — a unicast frame still physically reaches every device on the shared collision domain, but only the device whose MAC address matches the destination will **process** it; the rest discard it.
+<!--SR:!2026-09-26,3,250-->

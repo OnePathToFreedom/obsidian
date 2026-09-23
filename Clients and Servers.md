@@ -1,5 +1,5 @@
 ---
-tags: [networking, coursera, client-server, bilingual]
+tags: [networking, coursera, client-server, bilingual, flashcards, review]
 course: "Computer Networking (Google/Coursera)"
 created: 2026-09-16
 ---
@@ -54,3 +54,13 @@ EN: The terms "server"/"client" are used in two senses:
 > - RU: Сервер/клиент — не всегда целое устройство, может быть программа · EN: Server/client can be individual **programs**, not just whole devices
 > - RU: Один узел может быть и сервером, и клиентом одновременно · EN: A single node can be both a server and a client at the same time (in different roles)
 > - RU: "Сервер X" называют так по основной функции · EN: A node is called "server X" based on its **primary function**, not exclusivity
+
+---
+
+## Флеш-карточки · Flashcards
+#flashcards
+
+Что такое сервер и что важно понимать про это понятие? / What is a server, and what's important to understand about the term?::RU: **Сервер (Server)** — это то, что предоставляет данные по запросу. Важно: сервером может быть не только целое устройство, но и отдельная программа на узле по отношению к другой программе на том же узле. EN: A **server** is something that provides data to something requesting it. Importantly, a server can be an individual **program**, not just a whole device — even two programs on the same machine can be in a server/client relationship.
+Что такое клиент? / What is a client?::RU: **Клиент (Client)** — это то, что запрашивает и получает данные у сервера. Как и сервер, клиентом может быть целое устройство или отдельная программа. EN: A **client** is something that requests and receives data from a server. Like a server, a client can be a whole device or an individual program.
+Может ли один узел быть и сервером, и клиентом одновременно? Приведи пример. / Can one node be both a server and a client at the same time? Give an example.::RU: Да — большинство узлов являются и сервером, и клиентом в разные моменты. Пример: email-сервер — сервер для своих клиентов, но сам является клиентом DNS-сервера, когда ему нужно разрешить доменное имя. EN: Yes — most nodes are both a server and a client at different times. Example: an email server serves its clients, but it's itself a client of a DNS server when it needs to resolve a domain name.
+Почему email-сервер называют "сервером", хотя он иногда бывает и клиентом (например, DNS)? / Why is an email server called a "server" even though it's sometimes a client (e.g. of DNS)?::RU: Термин "сервер"/"клиент" используется в двух смыслах: (1) буквально — в конкретный момент, кто отдаёт, а кто получает данные; (2) по основной роли узла — "email-сервер" называют так за его **основное предназначение** (обслуживать email-клиентов), а не потому что он никогда не бывает клиентом. EN: "Server"/"client" is used in two senses: (1) literally — at a given moment, who's providing vs receiving data; (2) by primary role — an "email server" is named for its **primary purpose** (serving email clients), not because it's never a client.
